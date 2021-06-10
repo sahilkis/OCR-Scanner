@@ -1,0 +1,11 @@
+framework module AwDocumentCapture {
+  umbrella header "AwDocumentCapture.h"
+
+  export *
+  module * { export * }
+}
+
+module AwDocumentCapture.Swift {
+    header "AwDocumentCapture-Swift.h"
+    requires objc
+}

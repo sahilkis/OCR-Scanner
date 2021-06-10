@@ -1,0 +1,5 @@
+"HOLD"                  = "请保持";
+"DOCUMENT TOO CLOSE"    = "距离太近";
+"DOCUMENT TOO FAR"      = "距离太远";
+"CAPTURE COMPLETE"      = "完成";
+"PLACE DOCUMENT HERE"   = "请把文件置于这里";

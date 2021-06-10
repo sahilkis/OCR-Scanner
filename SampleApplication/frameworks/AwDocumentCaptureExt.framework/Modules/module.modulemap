@@ -1,0 +1,6 @@
+framework module AwDocumentCaptureExt {
+  umbrella header "AwDocumentCaptureExt.h"
+
+  export *
+  module * { export * }
+}

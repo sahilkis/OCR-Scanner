@@ -1,0 +1,11 @@
+framework module AwNFCPassportReaderSDK {
+  umbrella header "AwNFCPassportReaderSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module AwNFCPassportReaderSDK.Swift {
+    header "AwNFCPassportReaderSDK-Swift.h"
+    requires objc
+}

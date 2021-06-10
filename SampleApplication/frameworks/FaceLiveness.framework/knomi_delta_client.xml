@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile version="6000000">
+    <face_characteristics>
+		<!-- Disallow faces that are egregiously lit -->
+        <facial_dynamic_range min="7.0" max="8.0" />
+		<!-- Don't allow smiles	-->
+		<smile_likelihood min="0" pref="0" max="45" />
+    </face_characteristics>
+    <eye_characteristics>
+		<!-- Eyes must be open -->
+        <left_eye_closed_likelihood units="%" min="0" pref="0" max="75" qWeight="5.0" />
+        <right_eye_closed_likelihood units="%" min="0" pref="0" max="75" qWeight="5.0" />
+    </eye_characteristics>
+    <image_characteristics>
+        <background_pad_type min="2" pref="2" max="2" />
+    </image_characteristics>
+    <anomalies>
+        <!-- Do not allow Dark Glasses -->
+		<dark_glasses_likelihood min="0" pref="0" max="50" />
+		<!-- Do not allow Heavy Framed Glasses -->
+		<heavy_frames_likelihood min="0" pref="0" max="50" />
+    </anomalies>
+    <image_geometry>
+		<image_width pref="480" />
+		<image_height pref="640" />
+		<!-- Eye separation determines how far from the camera the subject can be. -->
+        <eye_separation units="pixels" min="65" />
+		<!-- Pose Roll -->
+		<eye_axis_angle units="degrees" min="-5" pref="0" max="5" />
+		<!-- Position of face in image -->
+        <eye_axis_location_ratio min="0.55" pref="0.6" max="0.65" />
+        <centerline_location_ratio min="0.42" pref="0.5" max="0.58" />
+		<!-- Head Width is a maximum of 74% of the Image's Width -->
+        <image_width_to_head_width_ratio min="1.35" pref="1.5" max="3.6" />
+		<!-- Head Height is a maximum of 60% of the Image's Height -->
+        <head_height_to_image_height_ratio min="0.2" pref="0.53" max="0.8" />
+    </image_geometry>
+    <image_storage>
+        <image_format min="2" pref="2" max="2" />
+    </image_storage>
+</profile>

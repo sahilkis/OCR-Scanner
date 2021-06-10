@@ -1,0 +1,1828 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FaceLiveness
+import AVFoundation
+import CoreGraphics
+import CoreMedia
+import CoreMotion
+import CoreVideo
+@_exported import FaceLiveness
+import Foundation
+import Swift
+import UIKit
+public class PrefaceErrorInfo {
+  public enum ErrorCode : Swift.Int, Swift.Error, Swift.CaseIterable {
+    case AW_PREFACE_E_NO_ERRORS
+    case AW_PREFACE_E_INTERNAL_ERROR
+    case AW_PREFACE_E_OUT_OF_MEMORY
+    case AW_PREFACE_E_NULL_PREFACE_OBJ
+    case AW_PREFACE_E_IMAGE_FORMAT_NOT_SUPPORTED
+    case AW_PREFACE_E_INVALID_FACE_DETECTION_MODE
+    case AW_PREFACE_E_INVALID_COLOR_FORMAT
+    case AW_PREFACE_E_INVALID_WIDTH
+    case AW_PREFACE_E_INVALID_HEIGHT
+    case AW_PREFACE_E_INVALID_STRIDE
+    case AW_PREFACE_E_NO_IMAGE_LOADED
+    case AW_PREFACE_E_INVALID_FACE_INDEX
+    case AW_PREFACE_E_INVALID_METRIC
+    case AW_PREFACE_E_INVALID_COMPLIANCE_SCALE
+    case AW_PREFACE_E_PARSING_IMAGE
+    case AW_PREFACE_E_NO_CORRECTABLE_VALUE
+    case AW_PREFACE_E_IMAGE_TOO_SMALL
+    case AW_PREFACE_E_INVALID_BIT_DEPTH
+    case AW_PREFACE_E_INVALID_ROTATION_ANGLE
+    case AW_PREFACE_E_INVALID_IMAGE_BUFFER_SIZE
+    case AW_PREFACE_E_INVALID_FEATURE
+    case AW_PREFACE_E_INVALID_BOX_TYPE
+    case AW_PREFACE_E_INVALID_MINIMUM_SIZE
+    case AW_PREFACE_E_INVALID_MAXIMUM_SIZE
+    case AW_PREFACE_E_INVALID_SENSITIVITY
+    case AW_PREFACE_E_INVALID_GRANULARITY
+    case AW_PREFACE_E_INVALID_RELATIVE_SIZE
+    case AW_PREFACE_E_INVALID_FACE_HANDLE
+    case AW_PREFACE_E_INVALID_METRIC_VALUE
+    case AW_PREFACE_E_INVALID_PROFILE_HANDLE
+    case AW_PREFACE_E_PROFILE_METRIC_VALUE_INVALID
+    case AW_PREFACE_E_INVALID_COMPLIANCE_STATUS
+    case AW_PREFACE_E_INVALID_INDEX
+    case AW_PREFACE_E_PROFILE_METRIC_INVALID
+    case AW_PREFACE_E_PROFILE_METRIC_UNIT_INVALID
+    case AW_PREFACE_E_PROFILE_METRIC_IN_WRONG_CATEGORY
+    case AW_PREFACE_E_PARSING_PROFILE_FILE
+    case AW_PREFACE_E_VALIDATING_PROFILE_FILE
+    case AW_PREFACE_E_PROFILE_VERSION_INCOMPATIBLE
+    case AW_PREFACE_E_INVALID_PROFILE
+    case AW_PREFACE_E_INVALID_METRIC_CONSTRAINT
+    case AW_PREFACE_E_PROFILE_METRIC_CATEGORY_INVALID
+    case AW_PREFACE_E_PROFILE_METRIC_NAME_INVALID
+    case AW_PREFACE_E_INVALID_HEIGHT_TO_WIDTH_RATIO
+    case AW_PREFACE_E_INVALID_IMAGEWIDTH_TO_HEADWIDTH_RATIO
+    case AW_PREFACE_E_IMAGE_RESOLUTION_TOO_LOW_FOR_EYESEPARATION
+    case AW_PREFACE_E_INVALID_EYE_SEPARATION
+    case AW_PREFACE_E_IMAGEWIDTH_TOO_SMALL_FOR_RATIO
+    case AW_PREFACE_E_IMAGEHEIGHT_TOO_SMALL_FOR_RATIO
+    case AW_PREFACE_E_INVALID_EYE_AXIS_LOCATION
+    case AW_PREFACE_E_INVALID_HEADHEIGHT_TO_IMAGEHEIGHT_RATIO
+    case AW_PREFACE_E_FACE_CENTER_UNCORRECTABLE_WITHOUT_PADDING
+    case AW_PREFACE_E_IMAGEWIDTH_TO_HEADWIDTH_UNCORRECTABLE_WITHOUT_PADDING
+    case AW_PREFACE_E_HEADHEIGHT_TO_IMAGEHEIGHT_UNCORRECTABLE_WITHOUT_PADDING
+    case AW_PREFACE_E_EYE_AXIS_LOCATION_UNCORRECTABLE_WITHOUT_PADDING
+    case AW_PREFACE_E_UNCORRECTABLE_WITHOUT_PADDING
+    case AW_PREFACE_E_INCONSISTENT_IMAGEWIDTH_RATIO
+    case AW_PREFACE_E_INCONSISTENT_IMAGEHEIGHT_RATIO
+    case AW_PREFACE_E_TOO_MANY_CONSTRAINTS
+    case AW_PREFACE_E_TOO_FEW_CONSTRAINTS
+    case AW_PREFACE_E_INCONSISTENT_CONSTRAINTS
+    case AW_PREFACE_E_UNCONSTRAINED_EYE_AXIS_LOCATION_RATIO
+    case AW_PREFACE_E_FILL_UNDEFINED_HEAD_BOUNDARY
+    case AW_PREFACE_E_FILL_UNDEFINED_SHOULDER_BOUNDARY
+    case AW_PREFACE_E_CONSTRUCT_FAILED
+    case AW_PREFACE_E_INVALID_COMPLIANCE_HANDLE
+    case AW_PREFACE_E_NULL_POINTER
+    case AW_PREFACE_E_METRIC_CONSTRAINT_VALUE_TOO_LOW
+    case AW_PREFACE_E_METRIC_CONSTRAINT_VALUE_TOO_HIGH
+    case AW_PREFACE_E_MIN_GREATER_THAN_MAX
+    case AW_PREFACE_E_MIN_GREATER_THAN_PREF
+    case AW_PREFACE_E_PREF_GREATER_THAN_MAX
+    case AW_PREFACE_E_CMIN_GREATER_THAN_CMAX
+    case AW_PREFACE_E_NEGATIVE_QWEIGHT
+    case AW_PREFACE_E_INVALID_NUM_CHANNELS
+    case AW_PREFACE_E_COMPRESSED_IMAGE_SIZE_OUT_OF_RANGE
+    case AW_PREFACE_E_ROI_FOREGROUND_COMPRESSION_RATIO_OUT_OF_RANGE
+    case AW_PREFACE_E_ROI_BACKGROUND_COMPRESSION_RATIO_OUT_OF_RANGE
+    case AW_PREFACE_E_ROI_FOREGROUND_COMPRESSION_RATIO_OUT_OF_EXCEEDED
+    case AW_PREFACE_E_J2K_DLL_ABSENT
+    case AW_PREFACE_E_INVALID_MAX_LEVEL_ENHANCE
+    case AW_PREFACE_E_ENHANCE_J2KROI_NOT_SUPPORT
+    case AW_PREFACE_E_EYE_LOCATIONS_INVALID
+    case AW_PREFACE_E_ERROR_CALCULATING_SCORE
+    case AW_PREFACE_E_NO_FACE_DETECTED_FROM_EYE_LOCATIONS
+    case AW_PREFACE_E_FILL_UNCERTAIN_HEAD_BOUNDARY
+    case AW_PREFACE_E_FILL_UNCERTAIN_SHOULDER_BOUNDARY
+    case AW_PREFACE_E_FILL_UNCERTAIN_NECK_BOUNDARY
+    case AW_PREFACE_E_FILL_BACKGROUND_TOO_COMPLEX
+    case AW_PREFACE_E_UNABLE_TO_ENHANCE_TO_COMPLIANCE
+    case AW_PREFACE_E_NO_ENHANCE_OUT_CORRECTABLE_RANGE
+    case AW_PREFACE_E_INVALID_IMAGE_PROPERTY
+    case AW_PREFACE_E_INVALID_PROPERTY_VALUE
+    case AW_PREFACE_E_INVALID_DATA_RECORD_FORMAT
+    case AW_PREFACE_E_INVALID_JSON_STRING
+    case AW_PREFACE_E_DATA_RECORD_ENCODE_FAILURE
+    case AW_PREFACE_E_DATA_RECORD_DECODE_FAILURE
+    case AW_PREFACE_E_ATTRIBUTE_INVALID_HANDLE_PROVIDED
+    case AW_PREFACE_E_ATTRIBUTE_NULL_POINTER_PARAMETER
+    case AW_PREFACE_E_CLASSIFIER_DATA_FILE_INVALID
+    case AW_PREFACE_E_CLASSIFIER_DATA_FILE_PREVIOUSLY_SET
+    case AW_PREFACE_E_CLASSIFIER_DATA_FILE_NOT_SET
+    case AW_PREFACE_E_INVALID_CLASSIFIER_COUNT
+    case AW_PREFACE_E_FINDER_NULL_POINTER_PARAMETER
+    case AW_PREFACE_E_NULL_CLASSIFIER
+    case AW_PREFACE_E_UNSUPPORTED_IN_MOBILE_MODE
+    case AW_PREFACE_E_FINDER_INVALID_HANDLE_PROVIDED
+    case AW_PREFACE_E_FAILED_TO_PARSE_JSON
+    case AW_PREFACE_E_INVALID_FUNCTION_NAME
+    case AW_PREFACE_E_INVALID_PARAMETER_LIST
+    case AW_PREFACE_E_INVALID_PARAMETER_TYPE
+    case AW_PREFACE_E_INCORRECT_PARAMETER_COUNT
+    case AW_PREFACE_E_INVALID_CHANNEL_NAME
+    public static func fromString(term: Swift.String) -> PrefaceErrorInfo.ErrorCode
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [PrefaceErrorInfo.ErrorCode]
+    public static var allCases: [PrefaceErrorInfo.ErrorCode] {
+      get
+    }
+  }
+  @objc deinit
+}
+public class Preface {
+  public static let UNCONSTRAINED: Swift.Int32
+  public enum MetricStatus : Swift.Int, Swift.CaseIterable {
+    case UNDETERMINED
+    case OK
+    case FAIL_LOW
+    case FAIL_HIGH
+    case FAIL_VALUE
+    public static func fromString(term: Swift.String) -> Preface.MetricStatus
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.MetricStatus]
+    public static var allCases: [Preface.MetricStatus] {
+      get
+    }
+  }
+  public enum FaceFeature : Swift.Int, Swift.CaseIterable {
+    case LEFT_EYE_CENTER
+    case RIGHT_EYE_CENTER
+    case NOSE_TIP
+    case MOUTH_CENTER
+    case LEFT_SIDE
+    case RIGHT_SIDE
+    case CHIN_TIP
+    case HEAD_TOP
+    case FACE_OUTLINE_TOP_LEFT
+    case FACE_OUTLINE_TOP_RIGHT
+    case FACE_OUTLINE_BOTTOM_LEFT
+    case FACE_OUTLINE_BOTTOM_RIGHT
+    case HEAD_OUTLINE_TOP_LEFT
+    case HEAD_OUTLINE_TOP_RIGHT
+    case HEAD_OUTLINE_BOTTOM_LEFT
+    case HEAD_OUTLINE_BOTTOM_RIGHT
+    public static func fromString(term: Swift.String) -> Preface.FaceFeature
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.FaceFeature]
+    public static var allCases: [Preface.FaceFeature] {
+      get
+    }
+  }
+  public enum Metric : Swift.Int, Swift.CaseIterable {
+    case IMAGE_WIDTH
+    case IMAGE_HEIGHT
+    case NUMBER_CHANNELS
+    case EYE_SEPARATION
+    case EYE_AXIS_LOCATION_RATIO
+    case CENTERLINE_LOCATION_RATIO
+    case HEIGHT_TO_WIDTH_RATIO
+    case IMAGE_WIDTH_TO_HEAD_WIDTH_RATIO
+    case HEAD_HEIGHT_TO_IMAGE_HEIGHT_RATIO
+    case POSE_ANGLE_YAW
+    case POSE_ANGLE_PITCH
+    case DEGREE_OF_ILLUMINATION_ASYMMETRY
+    case FACIAL_DYNAMIC_RANGE
+    case PERCENT_FACIAL_BRIGHTNESS
+    case BRIGHTNESS_SCORE
+    case PERCENT_FACIAL_SATURATION
+    case SMILE_LIKELIHOOD
+    case SHADOWS_LIKELIHOOD
+    case FOCUS_LIKELIHOOD
+    case SHARPNESS_LIKELIHOOD
+    case UNNATURAL_COLOR_LIKELIHOOD
+    case EYE_AXIS_ANGLE
+    case EYE_CONTRAST
+    case GLASSES_LIKELIHOOD
+    case DARK_GLASSES_LIKELIHOOD
+    case GLARE_LIKELIHOOD
+    case HEAVY_FRAMES_LIKELIHOOD
+    case FRAME_COVERED_RIGHT_EYE_LIKELIHOOD
+    case HAIR_COVERED_RIGHT_EYE_LIKELIHOOD
+    case RIGHT_EYE_CLOSED_LIKELIHOOD
+    case RIGHT_EYE_VALID_LIKELIHOOD
+    case FRAME_COVERED_LEFT_EYE_LIKELIHOOD
+    case HAIR_COVERED_LEFT_EYE_LIKELIHOOD
+    case LEFT_EYE_CLOSED_LIKELIHOOD
+    case LEFT_EYE_VALID_LIKELIHOOD
+    case OFF_ANGLE_GAZE_LIKELIHOOD
+    case REDEYE_LIKELIHOOD
+    case FOREHEAD_COVERING_LIKELIHOOD
+    case ESTIMATED_AGE
+    case AGE_CHILD_CONFIDENCE
+    case AGE_YOUTH_CONFIDENCE
+    case AGE_ADULT_CONFIDENCE
+    case AGE_SENIOR_CONFIDENCE
+    case FEMALE_CONFIDENCE
+    case MALE_CONFIDENCE
+    case RACE_WHITE_CONFIDENCE
+    case RACE_BLACK_CONFIDENCE
+    case RACE_ASIAN_CONFIDENCE
+    case PERCENT_BACKGROUND_GRAY
+    case PERCENT_BACKGROUND_UNIFORMITY
+    case DEGREE_OF_CLUTTER
+    case BACKGROUND_TYPE
+    case PERCENT_COLOR_BALANCED
+    case BACKGROUND_PAD_TYPE
+    case CONDITIONAL_PADDING
+    case JPEG_QUALITY_LEVEL
+    case FILE_SIZE
+    case J2K_COMPRESSION_RATIO
+    case J2K_ROI_FOREGROUND_COMPRESSION_RATIO
+    case J2K_ROI_BACKGROUND_COMPRESSION_RATIO
+    case IMAGE_FORMAT
+    case MASK_LIKELIHOOD
+    case MOUTH_OBSCURED_LIKELIHOOD
+    public static func fromString(term: Swift.String) -> Preface.Metric
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.Metric]
+    public static var allCases: [Preface.Metric] {
+      get
+    }
+  }
+  public enum MetricUnit : Swift.Int, Swift.CaseIterable {
+    case PIXELS
+    case BITS
+    case DEGREES
+    case PERCENT
+    case BYTES
+    case YEARS
+    case NO_UNIT
+    public static func fromString(term: Swift.String) -> Preface.MetricUnit
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.MetricUnit]
+    public static var allCases: [Preface.MetricUnit] {
+      get
+    }
+  }
+  public enum ColorFormat : Swift.Int, Swift.CaseIterable {
+    case GREY8
+    case RGB24
+    case BGR24
+    case ARGB
+    case BGRA
+    case NV_21
+    public static func fromString(term: Swift.String) -> Preface.ColorFormat
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.ColorFormat]
+    public static var allCases: [Preface.ColorFormat] {
+      get
+    }
+  }
+  public enum ImageFormat : Swift.Int, Swift.CaseIterable {
+    case TIF
+    case BMP
+    case PNM
+    case JPEG
+    case J2K
+    case J2K_ROI
+    case RAW
+    case PPM
+    case PGM
+    case PNG
+    public static func fromString(term: Swift.String) -> Preface.ImageFormat
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.ImageFormat]
+    public static var allCases: [Preface.ImageFormat] {
+      get
+    }
+  }
+  public enum DataRecordFormat : Swift.Int, Swift.CaseIterable {
+    case ISO_19794_5_2005
+    case ISO_19794_5_2011
+    public static func fromString(term: Swift.String) -> Preface.DataRecordFormat
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.DataRecordFormat]
+    public static var allCases: [Preface.DataRecordFormat] {
+      get
+    }
+  }
+  public enum MetricsCategory : Swift.Int, Swift.CaseIterable {
+    case FACE_CHARACTERISTICS
+    case EYE_CHARACTERISTICS
+    case IMAGE_CHARACTERISTICS
+    case ANOMALIES
+    case IMAGE_GEOMETRY
+    case DEMOGRAPHICS
+    case IMAGE_STORAGE
+    public static func fromString(term: Swift.String) -> Preface.MetricsCategory
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.MetricsCategory]
+    public static var allCases: [Preface.MetricsCategory] {
+      get
+    }
+  }
+  public enum MetricConstraint : Swift.Int, Swift.CaseIterable {
+    case PREFERRED
+    case MIN
+    case MAX
+    case ALLOWED_MIN
+    case ALLOWED_MAX
+    case Q_WEIGHT
+    case CMIN
+    case CMAX
+    public static func fromString(term: Swift.String) -> Preface.MetricConstraint
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.MetricConstraint]
+    public static var allCases: [Preface.MetricConstraint] {
+      get
+    }
+  }
+  public enum FaceDetectionMode : Swift.Int, Swift.CaseIterable {
+    case FACE_ORDERING_BY_SIZE
+    case FACE_ORDERING_BY_SCORE
+    case DOMINANT_FACE_BY_SIZE
+    case DOMINANT_FACE_BY_SCORE
+    case PASSPORT_FACE
+    public static func fromString(term: Swift.String) -> Preface.FaceDetectionMode
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.FaceDetectionMode]
+    public static var allCases: [Preface.FaceDetectionMode] {
+      get
+    }
+  }
+  public enum ProfileError : Swift.Int, Swift.CaseIterable {
+    case EYE_SEPARATION_INVALID
+    case EYE_AXIS_ANGLE_INVALID
+    case EYE_AXIS_ANGLE_PARTIALLY_CONSTRAINED
+    case HEAD_HEIGHT_TO_IMAGE_HEIGHT_RATIO_INVALID
+    case HEAD_HEIGHT_TO_IMAGE_HEIGHT_RATIO_UNCONSTRAINED
+    case IMAGE_WIDTH_TO_HEAD_WIDTH_RATIO_INVALID
+    case IMAGE_WIDTH_TO_HEAD_WIDTH_RATIO_PARTIALLY_CONSTRAINED
+    case EYE_AXIS_LOCATION_RATIO_INVALID
+    case EYE_AXIS_LOCATION_RATIO_PARTIALLY_CONSTRAINED
+    case CENTERLINE_LOCATION_RATIO_INVALID
+    case CENTERLINE_LOCATION_RATIO_PARTIALLY_CONSTRAINED
+    case BACKGROUND_PAD_TYPE_INVALID
+    case JPEG_QUALITY_LEVEL_INVALID
+    case JPEG_QUALITY_LEVEL_NOT_FULLY_CONSTRAINED
+    case J2K_ROI_FOREGROUND_COMPRESSION_RATIO_INVALID
+    case J2K_ROI_FOREGROUND_COMPRESSION_RATIO_UNCONSTRAINED
+    case J2K_ROI_FOREGROUND_COMPRESSION_RATIO_PARTIALLY_CONSTRAINED
+    case J2K_ROI_BACKGROUND_COMPRESSION_RATIO_INVALID
+    case J2K_ROI_BACKGROUND_COMPRESSION_RATIO_UNCONSTRAINED
+    case J2K_ROI_BACKGROUND_COMPRESSION_RATIO_PARTIALLY_CONSTRAINED
+    case IMAGE_FORMAT_INVALID
+    case IMAGE_FORMAT_PARTIALLY_CONSTRAINED
+    case FILE_SIZE_INVALID
+    case FILE_SIZE_UNCONSTRAINED
+    case FILE_SIZE_CONSTRAINED
+    case J2K_COMPRESSION_RATIO_INVALID
+    case J2K_COMPRESSION_RATIO_PARTIALLY_CONSTRAINED
+    case FILE_SIZE_AND_J2K_COMPRESSION_RATIO_BOTH_CONSTRAINED
+    case FILE_SIZE_AND_J2K_COMPRESSION_RATIO_BOTH_UNCONSTRAINED
+    case HEIGHT_TO_WIDTH_RATIO_INVALID
+    case IMAGE_WIDTH_INVALID
+    case IMAGE_HEIGHT_INVALID
+    case GEOMETRY_UNDER_CONSTRAINED
+    case GEOMETRY_OVER_CONSTRAINED
+    case NUMBER_OF_CHANNELS_INVALID
+    case CONDITIONAL_PADDING_INVALID
+    case DEGREE_OF_CLUTTER_INVALID
+    case BACKGROUND_TYPE_INVALID
+    case PERCENT_BACKGROUND_GRAY_INVALID
+    case PERCENT_BACKGROUND_UNIFORMITY_INVALID
+    case FACIAL_DYNAMIC_RANGE_INVALID
+    case PERCENT_FACIAL_BRIGHTNESS_INVALID
+    case PERCENT_FACIAL_SATURATION_INVALID
+    case BRIGHTNESS_SCORE_INVALID
+    case FOCUS_LIKELIHOOD_INVALID
+    case SMILE_LIKELIHOOD_INVALID
+    case ESTIMATED_AGE_INVALID
+    case AGE_CHILD_CONFIDENCE_INVALID
+    case AGE_YOUTH_CONFIDENCE_INVALID
+    case AGE_ADULT_CONFIDENCE_INVALID
+    case AGE_SENIOR_CONFIDENCE_INVALID
+    case MALE_CONFIDENCE_INVALID
+    case FEMALE_CONFIDENCE_INVALID
+    case CAUCASIAN_CONFIDENCE_INVALID
+    case AFRICAN_AMERICAN_CONFIDENCE_INVALID
+    case ASIAN_CONFIDENCE_INVALID
+    case POSE_ANGLE_YAW_INVALID
+    case POSE_ANGLE_PITCH_INVALID
+    case DEGREE_OF_ILLUMINATION_ASYMMETRY_INVALID
+    case SHADOW_LIKELIHOOD_INVALID
+    case LEFT_EYE_CLOSED_INVALID
+    case RIGHT_EYE_CLOSED_INVALID
+    case LEFT_EYE_VALID_INVALID
+    case RIGHT_EYE_VALID_INVALID
+    case LEFT_EYE_COVERED_BY_FRAMES_LIKELIHOOD_INVALID
+    case RIGHT_EYE_COVERED_BY_FRAMES_LIKELIHOOD_INVALID
+    case LEFT_EYE_COVERED_BY_HAIR_LIKELIHOOD_INVALID
+    case RIGHT_EYE_COVERED_BY_HAIR_LIKELIHOOD_INVALID
+    case GLASSES_LIKELIHOOD_INVALID
+    case DARK_GLASSES_LIKELIHOOD_INVALID
+    case GLARE_LIKELIHOOD_INVALID
+    case HEAVY_FRAMES_INVALID
+    case EYE_CONTRAST_INVALID
+    case CORRECTABLE_FACIAL_DYNAMIC_RANGE_INVALID
+    case CORRECTABLE_FACIAL_BRIGHTNESS_INVALID
+    case CORRECTABLE_EYE_CONTRAST_INVALID
+    case CORRECTABLE_BRIGHTNESS_SCORE_INVALID
+    case CORRECTABLE_EYE_AXIS_ANGLE_INVALID
+    case TOO_FEW_GEOMETRIC_CONSTRAINTS
+    case IMAGE_WIDTH_OUT_OF_RANGE
+    case IMAGE_HEIGHT_OUT_OF_RANGE
+    case NUMBER_OF_CHANNELS_OUT_OF_RANGE
+    case EYE_SEPARATION_OUT_OF_RANGE
+    case EYE_AXIS_LOCATION_RATIO_OUT_OF_RANGE
+    case CENTERLINE_LOCATION_RATIO_OUT_OF_RANGE
+    case HEAD_HEIGHT_TO_IMAGE_HEIGHT_RATIO_OUT_OF_RANGE
+    case IMAGE_WIDTH_TO_HEAD_WIDTH_RATIO_OUT_OF_RANGE
+    case HEIGHT_TO_WIDTH_RATIO_OUT_OF_RANGE
+    case POSE_ANGLE_YAW_OUT_OF_RANGE
+    case POSE_ANGLE_PITCH_OUT_OF_RANGE
+    case DEGREE_OF_ILLUMINATION_OUT_OF_RANGE
+    case FACIAL_DYNAMIC_RANGE_OUT_OF_RANGE
+    case PERCENT_FACIAL_BRIGHTNESS_OUT_OF_RANGE
+    case BRIGHTNESS_SCORE_OUT_OF_RANGE
+    case PERCENT_FACIAL_SATURATION_OUT_OF_RANGE
+    case SMILE_LIKELIHOOD_OUT_OF_RANGE
+    case SHADOW_LIKELIHOOD_OUT_OF_RANGE
+    case SHARPNESS_LIKELIHOOD_OUT_OF_RANGE
+    case UNNATURAL_COLOR_LIKELIHOOD_OUT_OF_RANGE
+    case EYE_AXIS_ANGLE_OUT_OF_RANGE
+    case EYE_CONTRAST_OUT_OF_RANGE
+    case GLASSES_LIKELIHOOD_OUT_OF_RANGE
+    case DARK_GLASSES_LIKELIHOOD_OUT_OF_RANGE
+    case HEAVY_FRAMES_LIKELIHOOD_OUT_OF_RANGE
+    case GLARE_LIKELIHOOD_OUT_OF_RANGE
+    case FRAME_COVERED_RIGHT_EYE_LIKELIHOOD_OUT_OF_RANGE
+    case HAIR_COVERED_RIGHT_EYE_LIKELIHOOD_OUT_OF_RANGE
+    case DEGREE_OF_RIGHT_EYE_CLOSED_OUT_OF_RANGE
+    case DEGREE_OF_RIGHT_EYE_VALID_OUT_OF_RANGE
+    case FRAME_COVERED_LEFT_EYE_LIKELIHOOD_OUT_OF_RANGE
+    case HAIR_COVERED_LEFT_EYE_LIKELIHOOD_OUT_OF_RANGE
+    case DEGREE_OF_LEFT_EYE_CLOSED_OUT_OF_RANGE
+    case DEGREE_OF_LEFT_EYE_VALID_OUT_OF_RANGE
+    case OFF_ANGLE_GAZE_LIKELIHOOD_OUT_OF_RANGE
+    case RED_EYE_LIKELIHOOD_OUT_OF_RANGE
+    case FOREHEAD_COVERING_LIKELIHOOD_OUT_OF_RANGE
+    case ESTIMATED_AGE_OUT_OF_RANGE
+    case AGE_CHILD_CONFIDENCE_OUT_OF_RANGE
+    case AGE_YOUTH_CONFIDENCE_OUT_OF_RANGE
+    case AGE_ADULT_CONFIDENCE_OUT_OF_RANGE
+    case AGE_SENIOR_CONFIDENCE_OUT_OF_RANGE
+    case MALE_CONFIDENCE_OUT_OF_RANGE
+    case FEMALE_CONFIDENCE_OUT_OF_RANGE
+    case CAUCASIAN_CONFIDENCE_OUT_OF_RANGE
+    case AFRICAN_AMERICAN_CONFIDENCE_OUT_OF_RANGE
+    case ASIAN_CONFIDENCE_OUT_OF_RANGE
+    case PERCENT_BACKGROUND_GRAY_OUT_OF_RANGE
+    case PERCENT_BACKGROUND_UNIFORMITY_OUT_OF_RANGE
+    case DEGREE_OF_CLUTTER_OUT_OF_RANGE
+    case BACKGROUND_TYPE_OUT_OF_RANGE
+    case PERCENT_COLOR_BALANCED_OUT_OF_RANGE
+    case BACKGROUND_PAD_TYPE_OUT_OF_RANGE
+    case CONDITIONAL_PADDING_OUT_OF_RANGE
+    case JPEG_QUALITY_LEVEL_OUT_OF_RANGE
+    case J2K_ROI_FOREGROUND_COMPRESSION_RATIO_OUT_OF_RANGE
+    case J2K_ROI_BACKGROUND_COMPRESSION_RATIO_OUT_OF_RANGE
+    case IMAGE_FORMAT_OUT_OF_RANGE
+    case FILE_SIZE_OUT_OF_RANGE
+    case CORRECTABLE_EYE_AXIS_ANGLE_OUT_OF_RANGE
+    case CORRECTABLE_FACIAL_DYNAMIC_RANGE_OUT_OF_RANGE
+    case CORRECTABLE_PERCENT_FACIAL_BRIGHTNESS_OUT_OF_RANGE
+    case CORRECTABLE_EYE_CONTRAST_OUT_OF_RANGE
+    case CORRECTABLE_BRIGHTNESS_SCORE_OUT_OF_RANGE
+    case MASK_LIKELIHOOD_INVALID
+    case BACKGROUND_PAD_TYPE_PARTIALLY_CONSTRAINED
+    case MOUTH_OBSCURED_LIKELIHOOD_INVALID
+    case MOUTH_OBSCURED_LIKELIHOOD_OUT_OF_RANGE
+    public static func fromString(term: Swift.String) -> Preface.ProfileError
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.ProfileError]
+    public static var allCases: [Preface.ProfileError] {
+      get
+    }
+  }
+  public enum ImageProperty : Swift.Int, Swift.CaseIterable {
+    case JPEG_QUALITY_LEVEL
+    case J2K_COMPRESSION_RATIO
+    case FILE_SIZE
+    public static func fromString(term: Swift.String) -> Preface.ImageProperty
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Preface.ImageProperty]
+    public static var allCases: [Preface.ImageProperty] {
+      get
+    }
+  }
+  public class InternalUtil {
+    public static func createPrefaceFromInternalPointer(prefaceHandle: Swift.OpaquePointer, ownership: Swift.Bool) -> Preface
+    @objc deinit
+  }
+  @objc deinit
+  public func dispose()
+  public static func setClassifierDataFile(fileName: Swift.String) throws
+  public static func initClassifierPool(numberOfClassifiers: Swift.Int32) throws
+  public static func clearClassifierPool() throws
+  public func setImageRaw(image: [Swift.UInt8], colorFormat: Preface.ColorFormat, width: Swift.UInt32, height: Swift.UInt32, stride: Swift.UInt32, rotationAngle: Swift.Double) throws -> Swift.Int32
+  public func setImageFormatted(image: [Swift.UInt8], rotationAngle: Swift.Double) throws -> Swift.Int32
+  public func getImageFormatted(imageFormat: Preface.ImageFormat, mirror: Swift.Bool) throws -> [Swift.UInt8]
+  public func setImageProperty(imageProperty: Preface.ImageProperty, value: Swift.Double) throws
+  public func getMetricUnit(metric: Preface.Metric) throws -> Preface.MetricUnit
+  public func getMetricMinimum(metric: Preface.Metric) throws -> Swift.Double
+  public func getMetricMaximum(metric: Preface.Metric) throws -> Swift.Double
+  public func getMetricCorrectableMinimum(metric: Preface.Metric) throws -> Swift.Double
+  public func getMetricCorrectableMaximum(metric: Preface.Metric) throws -> Swift.Double
+  public func getCategoryMetrics(metricsCategory: Preface.MetricsCategory) throws -> [Preface.Metric]
+  public func getFaceDetectionMinSize() throws -> Swift.Double
+  public func getFaceDetectionMaxSize() throws -> Swift.Double
+  public func setFaceDetectionSize(minimum: Swift.Double, maximum: Swift.Double) throws
+  public func getFaceDetectionSensitivity() throws -> Swift.Double
+  public func setFaceDetectionSensitivity(sensitivity: Swift.Double) throws
+  public func getFaceDetectionGranularity() throws -> Swift.Double
+  public func setFaceDetectionGranularity(granularity: Swift.Double) throws
+  public func getFaceDetectionMode() throws -> Preface.FaceDetectionMode
+  public func setFaceDetectionMode(faceDetectionMode: Preface.FaceDetectionMode) throws
+  public func getFaceCount() throws -> Swift.Int32
+  public func addUndetectedFace(leftEye: PointF, rightEye: PointF) throws -> Swift.Int32
+  public class Face {
+    @objc deinit
+    public func getFeatureLocation(feature: Preface.FaceFeature) throws -> PointF
+    public func getImage(imageFormat: Preface.ImageFormat, mirror: Swift.Bool) throws -> [Swift.UInt8]
+    public func constructImage(profileHandle: Preface.Profile) throws -> Preface.Face
+    public func autoEnhance(profileHandle: Preface.Profile, maxLevelOfEnhancement: Swift.Int32) throws
+    public func getMetricScore(metric: Preface.Metric) throws -> Swift.Double
+    public func encodeDataRecord(format: Preface.DataRecordFormat, imageFormat: Preface.ImageFormat, jsonData: Swift.String, options: Swift.String) throws -> [Swift.UInt8]
+    public func isCompliant(profileHandle: Preface.Profile) throws -> Swift.Bool
+    public func getMetricStatus(profileHandle: Preface.Profile, metric: Preface.Metric) throws -> Preface.MetricStatus
+    public func getComplianceScore(profileHandle: Preface.Profile) throws -> Swift.Double
+    public func dispose()
+  }
+  public func getFace(faceIndex: Swift.Int32) throws -> Preface.Face
+  public func readProfile(buffer: [Swift.UInt8], relaxHardConstraints: Swift.Int32) throws -> Preface.Profile
+  public func getProfileErrors(buffer: [Swift.UInt8]) throws -> [Preface.ProfileError]
+  public class Profile {
+    @objc deinit
+    public func getValue(metric: Preface.Metric, metricConstraint: Preface.MetricConstraint) throws -> Swift.Double
+    public func setValue(metric: Preface.Metric, metricConstraint: Preface.MetricConstraint, value: Swift.Double) throws -> [Preface.ProfileError]
+    public func getImageFormat() throws -> Preface.ImageFormat
+    public func setScale(value: Swift.Double) throws
+    public func write() throws -> [Swift.UInt8]
+    public func getMetricsList() throws -> [Preface.Metric]
+    public func getRoi(width: Swift.Int32, height: Swift.Int32) throws -> CoreGraphics.CGRect
+    public func dispose()
+  }
+  public func encodeDataRecord(format: Preface.DataRecordFormat, jsonData: Swift.String, options: Swift.String) throws -> [Swift.UInt8]
+  public func decodeDataRecord(format: Preface.DataRecordFormat, binaryBuffer: [Swift.UInt8], options: Swift.String) throws -> Swift.String
+  public static func getVersion() -> Swift.Int32
+  public static func getVersionString() -> Swift.String
+  public func GetObject() -> Swift.OpaquePointer
+}
+public class VideoErrorInfo {
+  public enum ErrorCode : Swift.Int, Swift.Error, Swift.CaseIterable {
+    case AW_VIDEO_E_NO_ERRORS
+    case AW_VIDEO_E_OUT_OF_MEMORY
+    case AW_VIDEO_E_NULL_VIDEO_OBJ
+    case AW_VIDEO_E_INVALID_CAMERA
+    case AW_VIDEO_E_PREVIEW_NOT_STARTED
+    case AW_VIDEO_E_CAPTURE_NOT_STARTED
+    case AW_VIDEO_E_GETTING_CAMERA_CONTROL
+    case AW_VIDEO_E_GETTING_PICTURE_TAKEN_BY_CAMERA
+    case AW_VIDEO_E_PREVIEW_IS_USING_CALLBACK
+    case AW_VIDEO_E_CAPTURE_IS_USING_CALLBACK
+    case AW_VIDEO_E_DEVICE_DISCONNECTED
+    case AW_VIDEO_E_INVALID_PROPERTY
+    case AW_VIDEO_E_INVALID_PROPERTY_INDEX
+    case AW_VIDEO_E_FRAME_NOT_READY
+    case AW_VIDEO_E_INVALID_RESULTS_POINTER
+    case AW_VIDEO_E_INVALID_PROFILE
+    case AW_VIDEO_E_INVALID_AUTOCAPTURE_FRAME_COUNT
+    case AW_VIDEO_E_INVALID_MINIMUM_TIME
+    case AW_VIDEO_E_INVALID_MINIMUM_SIZE
+    case AW_VIDEO_E_INVALID_MAXIMUM_SIZE
+    case AW_VIDEO_E_INVALID_RELATIVE_SIZE
+    case AW_VIDEO_E_INVALID_SENSITIVITY
+    case AW_VIDEO_E_INVALID_GRANULARITY
+    case AW_VIDEO_E_INVALID_ALGORITHM
+    case AW_VIDEO_E_INVALID_SCORING_MODE
+    case AW_VIDEO_E_INVALID_INTERFRAME_TIME
+    case AW_VIDEO_E_NO_INTERFRAME_TIME_SET
+    case AW_VIDEO_E_CAPTURING
+    case AW_VIDEO_E_INVALID_EXTERNAL_CAMERA_CONFIG_POINTER
+    case AW_VIDEO_E_EXTERNAL_CAMERA_CONFIG_NO_RESOLUTIONS
+    case AW_VIDEO_E_PREFACE_CLASSIFIER_DATA_FILE_NOT_SET
+    case AW_VIDEO_E_NO_PROFILE_SPECIFIED
+    case AW_VIDEO_E_CAMERA_NOT_OPEN
+    case AW_VIDEO_E_EXTENDED_DLL_NOT_FOUND
+    case AW_VIDEO_E_EXTENDED_MODULE_NOT_DETECTED
+    case AW_VIDEO_E_CAMERA_BUSY
+    case AW_VIDEO_E_CAMERA_MODE_UNSUPPORTED
+    case AW_VIDEO_E_PARSING_IMAGE
+    case AW_VIDEO_E_TIMESTAMP_ONLY_APPLICABLE_TO_SYNCHRONOUS_EXTERNAL_CAMERAS
+    case AW_VIDEO_E_INVALID_TIMESTAMP
+    case AW_VIDEO_E_CAPTURE_FAILED
+    case AW_VIDEO_E_ALGORITHM_DOES_NOT_ACCEPT_SCORES
+    case AW_VIDEO_E_ALGORITHM_NOT_ENABLED
+    case AW_VIDEO_E_ALGORITHM_NOT_SUPPORTED
+    case AW_VIDEO_E_ALGORITHM_DOES_NOT_USE_MODEL
+    case AW_VIDEO_E_ALGORITHM_FAILED_TO_LOAD_MODEL
+    case AW_VIDEO_E_DEVICE_DRIVER_OUT_OF_DATE
+    case AW_VIDEO_E_REFRESH_FAILED_CAMERA_OPEN
+    case AW_VIDEO_E_INVALID_IMAGE_FORMAT
+    case AW_VIDEO_E_RESOLUTION_MISMATCH
+    case AW_VIDEO_E_INVALID_STREAM
+    case AW_VIDEO_E_PREVIEW_LARGER_THAN_CAPTURE
+    case AW_VIDEO_E_INVALID_ROTATION_ANGLE
+    case AW_VIDEO_E_PROPERTY_NOT_APPLICABLE_TO_DEVICE
+    case AW_VIDEO_E_UNSUPPORTED_IN_MOBILE_MODE
+    case AW_VIDEO_E_PREFACE_VERSION_MISMATCH
+    case AW_VIDEO_E_FUNCTION_NOT_SUPPORTED_FOR_OS
+    case AW_VIDEO_E_FAILED_TO_PARSE_JSON
+    case AW_VIDEO_E_INVALID_FUNCTION_NAME
+    case AW_VIDEO_E_INVALID_PARAMETER_LIST
+    case AW_VIDEO_E_INVALID_PARAMETER_TYPE
+    case AW_VIDEO_E_INCORRECT_PARAMETER_COUNT
+    case AW_VIDEO_E_INVALID_CHANNEL_NAME
+    public static func fromString(term: Swift.String) -> VideoErrorInfo.ErrorCode
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [VideoErrorInfo.ErrorCode]
+    public static var allCases: [VideoErrorInfo.ErrorCode] {
+      get
+    }
+  }
+  @objc deinit
+}
+public class Video {
+  public typealias PreviewCallback = (Video.Camera, Video.Results, Swift.Int32) -> Swift.Void
+  public typealias CaptureCallback = (Video.Camera, Video.Results, Swift.Int32) -> Swift.Void
+  public typealias DeviceStatusCallback = (Video.Camera, Video.DeviceStatus) -> Swift.Void
+  public enum DeviceStatus : Swift.Int, Swift.CaseIterable {
+    case DISCONNECTED
+    case CONNECTED
+    case OPEN
+    case PREVIEWING
+    case CAPTURING
+    case UNSUPPORTED_MODE
+    public static func fromString(term: Swift.String) -> Video.DeviceStatus
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.DeviceStatus]
+    public static var allCases: [Video.DeviceStatus] {
+      get
+    }
+  }
+  public enum CameraType : Swift.Int, Swift.CaseIterable {
+    case UNSUPPORTED
+    case DIRECTX
+    case EOS
+    case IDS
+    case VIDEOLOGY
+    case EXTERNAL
+    case ICAM_TD100
+    case AKIYAMA
+    public static func fromString(term: Swift.String) -> Video.CameraType
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.CameraType]
+    public static var allCases: [Video.CameraType] {
+      get
+    }
+  }
+  public enum ImageFormat : Swift.Int, Swift.CaseIterable {
+    case UNDEFINED
+    case BMP
+    case JPG
+    case RAW_RGB
+    case RAW_BGR
+    case RAW_RGB_INVERTED
+    case RAW_BGR_INVERTED
+    case RAW_ARGB
+    case RAW_BGRA
+    case RAW_NV21
+    public static func fromString(term: Swift.String) -> Video.ImageFormat
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.ImageFormat]
+    public static var allCases: [Video.ImageFormat] {
+      get
+    }
+  }
+  public enum DetectionFeedback : Swift.Int, Swift.CaseIterable {
+    case OFF
+    case NO_FACE_DETECTED
+    case MULTIPLE_FACES_DETECTED
+    case FRAMERATE_TOO_SLOW
+    case GATHERING_DATA
+    case SCORES_READY
+    case INVALID_FRAME
+    case INVALID_FRAME_DUE_TO_BLUR
+    case INVALID_FRAME_DUE_TO_POOR_EYE_DEFINITION
+    case INVALID_FRAME_DUE_TO_LIGHTING
+    case INVALID_FRAME_DUE_TO_POSE
+    case INVALID_FRAME_DUE_TO_GLASSES
+    public static func fromString(term: Swift.String) -> Video.DetectionFeedback
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.DetectionFeedback]
+    public static var allCases: [Video.DetectionFeedback] {
+      get
+    }
+  }
+  public enum FaceEvent : Swift.Int, Swift.CaseIterable {
+    case BLINK
+    case SMILE
+    case HEAD_TURNED_LEFT
+    case HEAD_TURNED_RIGHT
+    public static func fromString(term: Swift.String) -> Video.FaceEvent
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.FaceEvent]
+    public static var allCases: [Video.FaceEvent] {
+      get
+    }
+  }
+  public enum FaceDetectionMode : Swift.Int, Swift.CaseIterable {
+    case FACE_ORDERING_BY_SIZE
+    case FACE_ORDERING_BY_SCORE
+    case DOMINANT_FACE_BY_SIZE
+    case DOMINANT_FACE_BY_SCORE
+    case LOCKED_FACE_BY_SIZE
+    case LOCKED_FACE_BY_SCORE
+    public static func fromString(term: Swift.String) -> Video.FaceDetectionMode
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.FaceDetectionMode]
+    public static var allCases: [Video.FaceDetectionMode] {
+      get
+    }
+  }
+  public enum WhiteBalance : Swift.Int, Swift.CaseIterable {
+    case AUTO
+    case DAYLIGHT
+    case CLOUDY
+    case TUNGSTEN
+    case FLUORESCENT
+    case FLASH
+    case MANUAL
+    case SHADE
+    case COLOR_TEMP
+    case PC_SET_ONE
+    case PC_SET_TWO
+    case PC_SET_THREE
+    case MANUAL_TWO
+    case MANUAL_THREE
+    case MANUAL_FOUR
+    case MANUAL_FIVE
+    case PC_SET_FOUR
+    case PC_SET_FIVE
+    case CLICK
+    case PASTED
+    case XENON_FLASH
+    case HALOGEN
+    case FLUORESCENT_H
+    public static func fromString(term: Swift.String) -> Video.WhiteBalance
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.WhiteBalance]
+    public static var allCases: [Video.WhiteBalance] {
+      get
+    }
+  }
+  public enum Iso : Swift.Int, Swift.CaseIterable {
+    case AUTO
+    public static func fromString(term: Swift.String) -> Video.Iso
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.Iso]
+    public static var allCases: [Video.Iso] {
+      get
+    }
+  }
+  public enum MeteringMode : Swift.Int, Swift.CaseIterable {
+    case SPOT
+    case EVALUATIVE
+    case PARTIAL
+    case CENTER_WEIGHTED_AVERAGING
+    public static func fromString(term: Swift.String) -> Video.MeteringMode
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.MeteringMode]
+    public static var allCases: [Video.MeteringMode] {
+      get
+    }
+  }
+  public enum ShutterSpeed : Swift.Int, Swift.CaseIterable {
+    case SS1_30
+    case SS1_40
+    case SS1_45
+    case SS1_50
+    case SS1_60
+    case SS1_80
+    case SS1_90
+    case SS1_100
+    case SS1_125
+    case SS1_160
+    case SS1_180
+    case SS1_200
+    case SS1_250
+    case SS1_320
+    case SS1_350
+    case SS1_400
+    case SS1_500
+    case SS1_640
+    case SS1_750
+    case SS1_800
+    case SS1_1000
+    case SS1_1250
+    case SS1_1500
+    case SS1_1600
+    case SS1_2000
+    case SS1_2500
+    case SS1_3000
+    case SS1_3200
+    case SS1_4000
+    case SS1_5000
+    case SS1_6000
+    case SS1_6400
+    case SS1_8000
+    public static func fromString(term: Swift.String) -> Video.ShutterSpeed
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.ShutterSpeed]
+    public static var allCases: [Video.ShutterSpeed] {
+      get
+    }
+  }
+  public enum CameraProperty : Swift.Int, Swift.CaseIterable {
+    case PREVIEW_WIDTH
+    case PREVIEW_HEIGHT
+    case CAPTURE_WIDTH
+    case CAPTURE_HEIGHT
+    case EXPOSURE
+    case FOCUS
+    case ZOOM
+    case AUTO_EXPOSURE
+    case AUTO_FOCUS
+    case LIGHT
+    case FLASH
+    case ROTATION_ANGLE
+    case WHITE_BALANCE
+    case ISO_SPEED
+    case SHUTTER_SPEED
+    case METERING_MODE
+    case ALL_PREVIEW_WIDTH
+    case ALL_PREVIEW_HEIGHT
+    case GENERATE_CAPTURE_CANDIDATES
+    case AUTO_WHITE_BALANCE
+    case COLOR_TEMPERATURE
+    case AUTO_COLOR_TEMPERATURE
+    public static func fromString(term: Swift.String) -> Video.CameraProperty
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.CameraProperty]
+    public static var allCases: [Video.CameraProperty] {
+      get
+    }
+  }
+  public enum AutocaptureMode : Swift.Int, Swift.CaseIterable {
+    case OFF
+    case ON
+    case OBSERVER
+    public static func fromString(term: Swift.String) -> Video.AutocaptureMode
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.AutocaptureMode]
+    public static var allCases: [Video.AutocaptureMode] {
+      get
+    }
+  }
+  public enum AutocaptureFeedback : Swift.Int, Swift.CaseIterable {
+    case OFF
+    case COMPLIANT_IMAGE
+    case CAPTURE_IMAGE
+    case IMAGE_RESOLUTION_TOO_LOW
+    case NO_FACE_DETECTED
+    case MULTIPLE_FACES_DETECTED
+    case INVALID_POSE
+    case FACE_TOO_FAR
+    case FACE_TOO_CLOSE
+    case FACE_ON_LEFT
+    case FACE_ON_RIGHT
+    case FACE_TOO_HIGH
+    case FACE_TOO_LOW
+    case INSUFFICIENT_LIGHTING
+    case LIGHT_TOO_BRIGHT
+    case TOO_MUCH_BLUR
+    case GLASSES_PRESENT
+    case GLASSES_ABSENT
+    case SMILE_PRESENT
+    case SMILE_ABSENT
+    case FOREHEAD_COVERING
+    case BACKGROUND_TOO_CLUTTERED
+    case BACKGROUND_TOO_BRIGHT
+    case BACKGROUND_TOO_DARK
+    case GENDER_NOT_FEMALE
+    case GENDER_NOT_MALE
+    case RACE_NOT_WHITE
+    case RACE_NOT_BLACK
+    case RACE_NOT_ASIAN
+    case LEFT_EYE_CLOSED
+    case RIGHT_EYE_CLOSED
+    case LEFT_EYE_OBSTRUCTED
+    case RIGHT_EYE_OBSTRUCTED
+    case OFF_ANGLE_GAZE
+    case HEAVY_FRAMES
+    case GLARE
+    case DARK_GLASSES
+    case TOO_YOUNG
+    case TOO_OLD
+    case FACIAL_SHADOWING
+    case RED_EYE
+    case UNNATURAL_LIGHTING_COLOR
+    case AWARE_INTERNAL_ERROR_1
+    case MOUTH_OBSCURED
+    case UNKNOWN
+    public static func fromString(term: Swift.String) -> Video.AutocaptureFeedback
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.AutocaptureFeedback]
+    public static var allCases: [Video.AutocaptureFeedback] {
+      get
+    }
+  }
+  public enum Algorithm : Swift.Int, Swift.CaseIterable {
+    case B2
+    case D2
+    case B3
+    case E1
+    case E2
+    case E3
+    case E4
+    case E5
+    case E6
+    case E7
+    case E8
+    case E9
+    case E1_W
+    case E2_W
+    case E3_W
+    case E4_W
+    case E5_W
+    case E6_W
+    case E7_W
+    case E8_W
+    case E9_W
+    case N1
+    case N2
+    case N3
+    case N4
+    case N5
+    case N6
+    case N7
+    case N8
+    case N9
+    case N1_A
+    case N1_B
+    case N1_C
+    case N1_D
+    case N1_E
+    case N1_F
+    case N1_G
+    case N1_H
+    case N1_I
+    case N1_J
+    case N1_W
+    case N2_A
+    case N2_B
+    case N2_C
+    case N2_D
+    case N2_E
+    case N2_F
+    case N2_G
+    case N2_H
+    case N2_I
+    case N2_J
+    case N2_W
+    case N3_A
+    case N3_B
+    case N3_C
+    case N3_D
+    case N3_E
+    case N3_F
+    case N3_G
+    case N3_H
+    case N3_I
+    case N3_J
+    case N3_W
+    case N4_A
+    case N4_B
+    case N4_C
+    case N4_D
+    case N4_E
+    case N4_F
+    case N4_G
+    case N4_H
+    case N4_I
+    case N4_J
+    case N4_W
+    case N5_A
+    case N5_B
+    case N5_C
+    case N5_D
+    case N5_E
+    case N5_F
+    case N5_G
+    case N5_H
+    case N5_I
+    case N5_J
+    case N5_W
+    case N6_A
+    case N6_B
+    case N6_C
+    case N6_D
+    case N6_E
+    case N6_F
+    case N6_G
+    case N6_H
+    case N6_I
+    case N6_J
+    case N6_W
+    case N7_A
+    case N7_B
+    case N7_C
+    case N7_D
+    case N7_E
+    case N7_F
+    case N7_G
+    case N7_H
+    case N7_I
+    case N7_J
+    case N7_W
+    case N8_A
+    case N8_B
+    case N8_C
+    case N8_D
+    case N8_E
+    case N8_F
+    case N8_G
+    case N8_H
+    case N8_I
+    case N8_J
+    case N8_W
+    case N9_A
+    case N9_B
+    case N9_C
+    case N9_D
+    case N9_E
+    case N9_F
+    case N9_G
+    case N9_H
+    case N9_I
+    case N9_J
+    case N9_W
+    public static func fromString(term: Swift.String) -> Video.Algorithm
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.Algorithm]
+    public static var allCases: [Video.Algorithm] {
+      get
+    }
+  }
+  public enum ScoringMode : Swift.Int, Swift.CaseIterable {
+    case SINGLE
+    case WINDOWED
+    case CUMULATIVE
+    case RAW
+    case CUMULATIVE_NO_PATCH
+    public static func fromString(term: Swift.String) -> Video.ScoringMode
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.ScoringMode]
+    public static var allCases: [Video.ScoringMode] {
+      get
+    }
+  }
+  public enum FrameTag : Swift.Int, Swift.CaseIterable {
+    case DARKENED
+    case BRIGHTENED
+    public static func fromString(term: Swift.String) -> Video.FrameTag
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Video.FrameTag]
+    public static var allCases: [Video.FrameTag] {
+      get
+    }
+  }
+  @objc deinit
+  public func dispose()
+  public static func getVersion() -> Swift.Int32
+  public static func getVersionString() -> Swift.String
+  public class Camera {
+    @objc deinit
+    public func getType() throws -> Video.CameraType
+    public func getName() throws -> Swift.String
+    public func open() throws
+    public func close() throws
+    public func getPropertyIndex(prop: Video.CameraProperty) throws -> Swift.Int32
+    public func setPropertyIndex(prop: Video.CameraProperty, index: Swift.Int32) throws
+    public func getPropertyValues(prop: Video.CameraProperty) throws -> [Swift.Int32]
+    public func startPreview() throws
+    public func endPreview() throws
+    public func getPreviewFrame() throws -> Video.Results
+    public func startCapture() throws
+    public func getCaptureFrame() throws -> Video.Results
+    public func getStatus() throws -> Video.DeviceStatus
+    public func analyzeFrame(image: [Swift.UInt8]) throws
+    public func analyzeFrameRaw(image: [Swift.UInt8], format: Video.ImageFormat, width: Swift.Int32, height: Swift.Int32) throws
+    public func setAutocaptureMode(autocaptureMode: Video.AutocaptureMode) throws
+    public func readAutocaptureProfile(profileBuffer: [Swift.UInt8]) throws
+    public func setAutocaptureMinimumFrameCount(minFrameCount: Swift.UInt32) throws
+    public func setAutocaptureMinimumEvaluationTime(minEvaluationTime: Swift.Double) throws
+    public func setAutocaptureMinimumComplianceTime(minComplianceTime: Swift.Double) throws
+    public func enableAlgorithm(algorithm: Video.Algorithm, enable: Swift.Bool) throws
+    public func setAlgorithmScoringMode(scoringMode: Video.ScoringMode) throws
+    public func setAlgorithmModelPath(algorithm: Video.Algorithm, modelPath: Swift.String) throws
+    public func pushAlgorithmScore(algorithm: Video.Algorithm, score: Swift.Double) throws
+    public func enableAlgorithmReset(enable: Swift.Bool) throws
+    public func enableFaceEvent(faceEvent: Video.FaceEvent, on: Swift.Bool) throws
+    public func enableFrameTag(frameTag: Video.FrameTag, on: Swift.Bool) throws
+    public func setTimestamp(timestamp: Swift.Double) throws
+    public func dispose()
+  }
+  public func setPreviewCallback(previewCallback: @escaping Video.PreviewCallback) throws
+  public func setCaptureCallback(captureCallback: @escaping Video.CaptureCallback) throws
+  public func setDeviceStatusCallback(deviceStatusCallback: @escaping Video.DeviceStatusCallback) throws
+  public func createExternalCameraConfig() throws -> Video.ExternalCameraConfig
+  public class ExternalCameraConfig {
+    @objc deinit
+    public func addResolution(width: Swift.UInt32, height: Swift.UInt32) throws
+    public func enableSynchronousAnalysis(enable: Swift.Bool) throws
+    public func dispose()
+  }
+  public func createExternalCameraFromConfig(configHandle: Video.ExternalCameraConfig) throws -> Video.Camera
+  public class Results {
+    @objc deinit
+    public func getPreface() throws -> Preface
+    public func getFrameId() throws -> Swift.Int32
+    public func getAutocaptureStatus() throws -> Swift.Int32
+    public func getFaceEventScore(faceEvent: Video.FaceEvent) throws -> Swift.Double
+    public func getAlgorithmScore(algorithm: Video.Algorithm) throws -> Swift.Double
+    public func getAutocaptureFeedback() throws -> [Video.AutocaptureFeedback]
+    public func getFaceEventFeedback() throws -> [Video.DetectionFeedback]
+    public func getAlgorithmFeedback(algorithm: Video.Algorithm) throws -> [Video.DetectionFeedback]
+    public func getAutocaptureFrameList() throws -> [Swift.Int32]
+    public func getEventDetectionFrameList() throws -> [Swift.Int32]
+    public func getAlgorithmFrameList(algorithm: Video.Algorithm) throws -> [Swift.Int32]
+    public func getFrameTimestamp() throws -> Swift.Double
+    public func dispose()
+  }
+  public func getAutocaptureFeedbackFromProfile(profile: [Swift.UInt8]) throws -> [Video.AutocaptureFeedback]
+  public func getCameraList() throws -> [Video.Camera]
+  public func refreshCameraList() throws
+  public func getFaceDetectionMinSize() throws -> Swift.Double
+  public func getFaceDetectionMaxSize() throws -> Swift.Double
+  public func setFaceDetectionSize(minimum: Swift.Double, maximum: Swift.Double) throws
+  public func getFaceDetectionSensitivity() throws -> Swift.Double
+  public func setFaceDetectionSensitivity(sensitivity: Swift.Double) throws
+  public func getFaceDetectionGranularity() throws -> Swift.Double
+  public func setFaceDetectionGranularity(granularity: Swift.Double) throws
+  public func getFaceDetectionMode() throws -> Video.FaceDetectionMode
+  public func setFaceDetectionMode(faceDetectionMode: Video.FaceDetectionMode) throws
+}
+public class Scoring {
+  public enum Algorithm : Swift.Int, Swift.CaseIterable {
+    case D100
+    case D150
+    case D300
+    case D350
+    case D600
+    case D900
+    case F200
+    case I500
+    public static func fromString(term: Swift.String) -> Scoring.Algorithm
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Scoring.Algorithm]
+    public static var allCases: [Scoring.Algorithm] {
+      get
+    }
+  }
+  public enum ScoringMethod : Swift.Int, Swift.CaseIterable {
+    case NO_CHANGE
+    case NORMALIZE
+    case FUSE_D600_D900
+    public static func fromString(term: Swift.String) -> Scoring.ScoringMethod
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Scoring.ScoringMethod]
+    public static var allCases: [Scoring.ScoringMethod] {
+      get
+    }
+  }
+  public enum LivenessDecision : Swift.Int, Swift.CaseIterable {
+    case ERROR
+    case LIVE
+    case SPOOF
+    public static func fromString(term: Swift.String) -> Scoring.LivenessDecision
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [Scoring.LivenessDecision]
+    public static var allCases: [Scoring.LivenessDecision] {
+      get
+    }
+  }
+  @objc deinit
+  public func dispose()
+  public func fuseFmrScores(fmrScores: [Swift.Float]) throws -> Swift.Float
+  public func fusePercentScores(percentScores: [Swift.Float], gallerySizes: [Swift.Int32], gallerySizeOut: Swift.Int32) throws -> Swift.Float
+  public func fuseFmrScoresWithMinimum(fmrScores: [Swift.Float], minimumThreshold: Swift.Float) throws -> Swift.Float
+  public func fuseFmrScoresWithWeights(fmrScores: [Swift.Float], weights: [Swift.Float]) throws -> Swift.Float
+  public func fusePercentScoresWithWeights(percentScores: [Swift.Float], gallerySizes: [Swift.Int32], weights: [Swift.Float], gallerySizeOut: Swift.Int32) throws -> Swift.Float
+  public func fuseMultiSampleFmrScores(fmrScores: [Swift.Float]) throws -> Swift.Float
+  public func fuseMultiSamplePercentScores(percentScores: [Swift.Float]) throws -> Swift.Float
+  public func fuseRankScores(rankScores: [Swift.Float]) throws -> Swift.Float
+  public func fuseRankedQualityFteScores(fteScores: [Swift.Double], total: Swift.Int32) throws -> Swift.Double
+  public func fuseLiveness(livenessJson: Swift.String) throws -> Scoring.LivenessDecision
+  public func getScoringMethod(workflow: [Scoring.Algorithm]) throws -> Scoring.ScoringMethod
+  public func fuseD600D900(d600RankScore: Swift.Float, d900RankScore: Swift.Float, fingerCount: Swift.Int32) throws -> Swift.Float
+  public func fuseV600V900(v600FmrScore: Swift.Float, v900FmrScore: Swift.Float) throws -> Swift.Float
+  public func convertMissingScoreDataToFmrScore(gallerySize: Swift.Int32, resultListSize: Swift.Int32, lowestFmrScore: Swift.Float) throws -> Swift.Float
+  public func convertFmrScoreToFpirScore(fmrScore: Swift.Float, gallerySize: Swift.Int32) throws -> Swift.Float
+  public func convertFpirScoreToFmrScore(fpirScore: Swift.Float, gallerySize: Swift.Int32) throws -> Swift.Float
+  public func convertFmrScoreToPercentScore(fmrScore: Swift.Float, gallerySize: Swift.Int32) throws -> Swift.Float
+  public func convertFpirScoreToPercentScore(fpirScore: Swift.Float) throws -> Swift.Float
+  public func convertPercentScoreToFmrScore(percentScore: Swift.Float, gallerySize: Swift.Int32) throws -> Swift.Float
+  public func convertPercentScoreToFpirScore(percentScore: Swift.Float) throws -> Swift.Float
+  public func convertEqualErrorRateToQ(eer: Swift.Float) throws -> Swift.Float
+  public func convertErrorRatesToQ(fmr: Swift.Float, frr: Swift.Float) throws -> Swift.Float
+  public func convertIdentificationErrorRatesToQ(fpir: Swift.Float, fnir: Swift.Float, gallerySize: Swift.Int32) throws -> Swift.Float
+  public func convertRecognitionRateToQ(recognitionRate: Swift.Float, gallerySize: Swift.Int32) throws -> Swift.Float
+  public func convertPowerLawExponentToQ(powerLawExponent: Swift.Float) throws -> Swift.Float
+  public func convertQToPowerLawExponent(accuracyQ: Swift.Float) throws -> Swift.Float
+  public func convertQToFusionWeight(accuracyQ: Swift.Float) throws -> Swift.Float
+  public func calculateConfidence(fmrScore: Swift.Float, gallerySize: Swift.Int32, accuracyQ: Swift.Float) throws -> Swift.Float
+  public func calculateExpectedFmrScoreAtRank(rank: Swift.Int32, gallerySize: Swift.Int32) throws -> Swift.Float
+  public func calculateFpirForFmrScoreAtRank(fmrScore: Swift.Double, rank: Swift.Int32, gallerySize: Swift.Int32) throws -> Swift.Double
+  public static func getVersion() -> Swift.Int32
+  public static func getVersionString() -> Swift.String
+}
+public class ScoringErrorInfo {
+  public enum ErrorCode : Swift.Int, Swift.Error, Swift.CaseIterable {
+    case AW_SCORING_E_NO_ERRORS
+    case AW_SCORING_E_OUT_OF_MEMORY
+    case AW_SCORING_E_NULL_SCORING_OBJ
+    case AW_SCORING_E_NO_ALGORITHM_SPEEDS_SPECIFIED
+    case AW_SCORING_E_D100_D150_MUTUALLY_EXCLUSIVE
+    case AW_SCORING_E_INVALID_BIOMETRIC_COUNT
+    case AW_SCORING_E_D100_OR_D150_SPEED_NOT_SPECIFIED
+    case AW_SCORING_E_D350_SPEED_NOT_SPECIFIED
+    case AW_SCORING_E_D600_SPEED_NOT_SPECIFIED
+    case AW_SCORING_E_D900_SPEED_NOT_SPECIFIED
+    case AW_SCORING_E_SEARCH_TIME_CANNOT_BE_MET
+    case AW_SCORING_E_JSON_FAILED_TO_PARSE
+    case AW_SCORING_E_MISSING_LIVENESS_PARAMETER
+    case AW_SCORING_E_INVALID_LIVENESS_PARAMETER
+    case AW_SCORING_E_FAILED_TO_CALCULATE_LIVENESS
+    case AW_SCORING_E_LIVENESS_UNSUPPORTED
+    public static func fromString(term: Swift.String) -> ScoringErrorInfo.ErrorCode
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+    public typealias AllCases = [ScoringErrorInfo.ErrorCode]
+    public static var allCases: [ScoringErrorInfo.ErrorCode] {
+      get
+    }
+  }
+  @objc deinit
+}
+public enum BrightnessState {
+  case dark
+  case bright
+  public static func == (a: BrightnessState, b: BrightnessState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum Liveness : Swift.String {
+  case videoText
+  case voiceText
+  case nexafaceText
+  case nexavoiceText
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ResponseType : Swift.String {
+  case Ok
+  case TryAgain
+  case Error
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum RestClientError : Swift.Error {
+  case noError
+  case noResponse
+  case cannotCreateURL
+  case jsonDeserializeError
+  case missing(Swift.String)
+  case invalid(Swift.String, Any)
+}
+public enum RestCommand : Swift.String {
+  case analyze
+  case knomiRegister
+  case knomiVerify
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum FaceLivenessRestCommand : Swift.String {
+  case capture
+  case register
+  case verify
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum VoiceLivenessRestCommand : Swift.String {
+  case analyze
+  case register
+  case verify
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SerializationError : Swift.Error {
+  case missing(Swift.String)
+  case invalid(Swift.String, Any)
+}
+public struct Algorithm : Swift.Equatable {
+  public var description: Swift.String {
+    get
+  }
+  public static func == (lhs: Algorithm, rhs: Algorithm) -> Swift.Bool
+}
+public struct AnalyzeVideoRequest {
+}
+public struct AnalyzeVoiceRequest {
+}
+public struct AutoCaptureFrameData {
+}
+public struct AutoCaptureResult {
+}
+public struct ByteFrame {
+}
+public struct ConfigurationOverride : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct FaceEvent {
+  public var description: Swift.String {
+    get
+  }
+}
+public struct FrameData {
+  public var description: Swift.String {
+    get
+  }
+}
+public struct LoggingRequest {
+}
+public struct LoggingResponse {
+}
+public struct MetaData {
+}
+public struct ProfileInfo {
+  public var description: Swift.String {
+    get
+  }
+}
+public struct VideoSettings {
+  public var description: Swift.String {
+    get
+  }
+}
+public struct VoiceMode {
+  public init(name: Swift.String, timeLimit: Swift.Int)
+}
+public struct VoiceSample {
+}
+public struct WorkflowData {
+}
+public struct WorkflowOverride : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class AwCounter {
+  public init()
+  @objc deinit
+  public func increment()
+  public func decrement()
+  public func incrementAndGet() -> Swift.Int
+  public func decrementAndGet() -> Swift.Int
+  public func getValue() -> Swift.Int
+  public func incrementIfEqual(compareValue: Swift.Int) -> Swift.Bool
+  public func incrementIfGreater(compareValue: Swift.Int) -> Swift.Bool
+  public func incrementIfLess(compareValue: Swift.Int) -> Swift.Bool
+  public func decrementIfEqual(compareValue: Swift.Int) -> Swift.Bool
+  public func decrementIfGreater(compareValue: Swift.Int) -> Swift.Bool
+  public func decrementIfLess(compareValue: Swift.Int) -> Swift.Bool
+}
+public class PointF {
+  @objc deinit
+}
+@objc public enum AutocaptureFeedback : Swift.Int {
+  case OFF, COMPLIANT_IMAGE, NO_FACE_DETECTED, MULTIPLE_FACES_DETECTED, INVALID_POSE, FACE_TOO_FAR, FACE_TOO_CLOSE, FACE_ON_LEFT, FACE_ON_RIGHT, FACE_TOO_HIGH, FACE_TOO_LOW, INSUFFICIENT_LIGHTING, LIGHT_TOO_BRIGHT, TOO_MUCH_BLUR, SMILE_PRESENT, FOREHEAD_COVERING, BACKGROUND_TOO_BRIGHT, BACKGROUND_TOO_DARK, LEFT_EYE_CLOSED, RIGHT_EYE_CLOSED, LEFT_EYE_OBSTRUCTED, RIGHT_EYE_OBSTRUCTED, HEAVY_FRAMES, GLARE, DARK_GLASSES, FACIAL_SHADOWING, UNNATURAL_LIGHTING_COLOR, UNKNOWN
+  public static func allValues() -> [AutocaptureFeedback]
+  public var description: Swift.String {
+    get
+  }
+  public static func fromString(term: Swift.String) -> AutocaptureFeedback
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum FaceLivenessError : Swift.Int, Swift.Error, Swift.CustomStringConvertible {
+  case noError
+  case workflowInProgress
+  case workflowInvalid
+  case workflowNotSelected
+  case workflowNoneAvailable
+  case workflowInconsistent
+  case workflowUnableToInitialize
+  case serverPackageNotAvailable
+  case cameraInvalid
+  case audioUnableToInitialize
+  case regionOfInterestNotAvailable
+  case imageNotAvailable
+  case classifierDataFileNotFound
+  case emptyUsernameNotAllowed
+  case imageCallbackNotSet
+  case feedbackCallbackNotSet
+  case workflowStateCallbackNotSet
+  case propertyInvalid
+  case faceModelInvalid
+  case faceModelNotSupportWorkflow
+  case methodNotAvailable
+  case functionNotAvailableInProduct
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum LivenessDecision : Swift.Int, Swift.CustomStringConvertible {
+  case ERROR, LIVE, SPOOF
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum PropertyTag : Swift.Int {
+  case username
+  case constructImage
+  case captureTimeout
+  case captureOnDevice
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum StaticPropertyTag : Swift.Int {
+  case faceModel
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum WorkflowState : Swift.Int {
+  case workflowPreparing
+  case workflowDeviceInPosition
+  case workflowHoldSteady
+  case workflowCapturing
+  case workflowEvent
+  case workflowShowUI
+  case workflowHideUI
+  case workflowPostProcessing
+  case workflowComplete
+  case workflowAborted
+  case workflowTimedOut
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @objcMembers public class FeedbackResult : ObjectiveC.NSObject {
+  @objc public var autocaptureFeedback: AutocaptureFeedback
+  @objc deinit
+}
+@objc @IBDesignable public class FaceLiveness : UIKit.UIView {
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+  @objc override dynamic public func layoutSubviews()
+  public func setScreenBrightness(brightness: CoreGraphics.CGFloat, wantsSoftwareDimming: Swift.Bool, originalBrightness: CoreGraphics.CGFloat)
+  @objc public func getVersion() -> Swift.String
+  @objc public static func setStaticPropertyString(name: StaticPropertyTag, value: Swift.String) throws
+  @objc public func setPropertyString(name: PropertyTag, value: Swift.String) throws
+  @objc public func setPropertyBool(name: PropertyTag, value: Swift.Bool) throws
+  @objc public func setPropertyDouble(name: PropertyTag, value: Swift.Double) throws
+  @objc public func selectWorkflow(workflow: Swift.String) throws
+  @objc public func selectWorkflow(workflow: Swift.String, overrideParametersJson overrideJson: Swift.String?) throws
+  @objc public func setDevicePositionCallback(callback: @escaping DevicePositionCallback)
+  @objc public func setFeedbackCallback(callback: @escaping FeedbackCallback)
+  @objc public func setWorkflowStateCallback(callback: @escaping WorkflowStateCallback)
+  @objc public func getRegionOfInterest() throws -> [CoreGraphics.CGFloat]
+  @objc public func start() throws
+  @objc public func stop() throws
+  @objc public func getServerPackage() throws -> [Swift.String : Any]
+  @objc public func getCapturedImage() throws -> UIKit.UIImage
+  public func getLivenessDecision() throws -> LivenessDecision
+  @objc public func getLivenessDecisionAndReturnError(error: Foundation.NSErrorPointer) -> LivenessDecision
+}
+public typealias DevicePositionCallback = (CoreGraphics.CGFloat, Swift.Bool) -> Swift.Void
+public typealias FeedbackCallback = (FeedbackResult) -> Swift.Void
+public typealias WorkflowStateCallback = (WorkflowState, Swift.String) -> Swift.Void
+extension PrefaceErrorInfo.ErrorCode : Swift.Equatable {}
+extension PrefaceErrorInfo.ErrorCode : Swift.Hashable {}
+extension PrefaceErrorInfo.ErrorCode : Swift.RawRepresentable {}
+extension Preface.MetricStatus : Swift.Equatable {}
+extension Preface.MetricStatus : Swift.Hashable {}
+extension Preface.MetricStatus : Swift.RawRepresentable {}
+extension Preface.FaceFeature : Swift.Equatable {}
+extension Preface.FaceFeature : Swift.Hashable {}
+extension Preface.FaceFeature : Swift.RawRepresentable {}
+extension Preface.Metric : Swift.Equatable {}
+extension Preface.Metric : Swift.Hashable {}
+extension Preface.Metric : Swift.RawRepresentable {}
+extension Preface.MetricUnit : Swift.Equatable {}
+extension Preface.MetricUnit : Swift.Hashable {}
+extension Preface.MetricUnit : Swift.RawRepresentable {}
+extension Preface.ColorFormat : Swift.Equatable {}
+extension Preface.ColorFormat : Swift.Hashable {}
+extension Preface.ColorFormat : Swift.RawRepresentable {}
+extension Preface.ImageFormat : Swift.Equatable {}
+extension Preface.ImageFormat : Swift.Hashable {}
+extension Preface.ImageFormat : Swift.RawRepresentable {}
+extension Preface.DataRecordFormat : Swift.Equatable {}
+extension Preface.DataRecordFormat : Swift.Hashable {}
+extension Preface.DataRecordFormat : Swift.RawRepresentable {}
+extension Preface.MetricsCategory : Swift.Equatable {}
+extension Preface.MetricsCategory : Swift.Hashable {}
+extension Preface.MetricsCategory : Swift.RawRepresentable {}
+extension Preface.MetricConstraint : Swift.Equatable {}
+extension Preface.MetricConstraint : Swift.Hashable {}
+extension Preface.MetricConstraint : Swift.RawRepresentable {}
+extension Preface.FaceDetectionMode : Swift.Equatable {}
+extension Preface.FaceDetectionMode : Swift.Hashable {}
+extension Preface.FaceDetectionMode : Swift.RawRepresentable {}
+extension Preface.ProfileError : Swift.Equatable {}
+extension Preface.ProfileError : Swift.Hashable {}
+extension Preface.ProfileError : Swift.RawRepresentable {}
+extension Preface.ImageProperty : Swift.Equatable {}
+extension Preface.ImageProperty : Swift.Hashable {}
+extension Preface.ImageProperty : Swift.RawRepresentable {}
+extension VideoErrorInfo.ErrorCode : Swift.Equatable {}
+extension VideoErrorInfo.ErrorCode : Swift.Hashable {}
+extension VideoErrorInfo.ErrorCode : Swift.RawRepresentable {}
+extension Video.DeviceStatus : Swift.Equatable {}
+extension Video.DeviceStatus : Swift.Hashable {}
+extension Video.DeviceStatus : Swift.RawRepresentable {}
+extension Video.CameraType : Swift.Equatable {}
+extension Video.CameraType : Swift.Hashable {}
+extension Video.CameraType : Swift.RawRepresentable {}
+extension Video.ImageFormat : Swift.Equatable {}
+extension Video.ImageFormat : Swift.Hashable {}
+extension Video.ImageFormat : Swift.RawRepresentable {}
+extension Video.DetectionFeedback : Swift.Equatable {}
+extension Video.DetectionFeedback : Swift.Hashable {}
+extension Video.DetectionFeedback : Swift.RawRepresentable {}
+extension Video.FaceEvent : Swift.Equatable {}
+extension Video.FaceEvent : Swift.Hashable {}
+extension Video.FaceEvent : Swift.RawRepresentable {}
+extension Video.FaceDetectionMode : Swift.Equatable {}
+extension Video.FaceDetectionMode : Swift.Hashable {}
+extension Video.FaceDetectionMode : Swift.RawRepresentable {}
+extension Video.WhiteBalance : Swift.Equatable {}
+extension Video.WhiteBalance : Swift.Hashable {}
+extension Video.WhiteBalance : Swift.RawRepresentable {}
+extension Video.Iso : Swift.Equatable {}
+extension Video.Iso : Swift.Hashable {}
+extension Video.Iso : Swift.RawRepresentable {}
+extension Video.MeteringMode : Swift.Equatable {}
+extension Video.MeteringMode : Swift.Hashable {}
+extension Video.MeteringMode : Swift.RawRepresentable {}
+extension Video.ShutterSpeed : Swift.Equatable {}
+extension Video.ShutterSpeed : Swift.Hashable {}
+extension Video.ShutterSpeed : Swift.RawRepresentable {}
+extension Video.CameraProperty : Swift.Equatable {}
+extension Video.CameraProperty : Swift.Hashable {}
+extension Video.CameraProperty : Swift.RawRepresentable {}
+extension Video.AutocaptureMode : Swift.Equatable {}
+extension Video.AutocaptureMode : Swift.Hashable {}
+extension Video.AutocaptureMode : Swift.RawRepresentable {}
+extension Video.AutocaptureFeedback : Swift.Equatable {}
+extension Video.AutocaptureFeedback : Swift.Hashable {}
+extension Video.AutocaptureFeedback : Swift.RawRepresentable {}
+extension Video.Algorithm : Swift.Equatable {}
+extension Video.Algorithm : Swift.Hashable {}
+extension Video.Algorithm : Swift.RawRepresentable {}
+extension Video.ScoringMode : Swift.Equatable {}
+extension Video.ScoringMode : Swift.Hashable {}
+extension Video.ScoringMode : Swift.RawRepresentable {}
+extension Video.FrameTag : Swift.Equatable {}
+extension Video.FrameTag : Swift.Hashable {}
+extension Video.FrameTag : Swift.RawRepresentable {}
+extension Scoring.Algorithm : Swift.Equatable {}
+extension Scoring.Algorithm : Swift.Hashable {}
+extension Scoring.Algorithm : Swift.RawRepresentable {}
+extension Scoring.ScoringMethod : Swift.Equatable {}
+extension Scoring.ScoringMethod : Swift.Hashable {}
+extension Scoring.ScoringMethod : Swift.RawRepresentable {}
+extension Scoring.LivenessDecision : Swift.Equatable {}
+extension Scoring.LivenessDecision : Swift.Hashable {}
+extension Scoring.LivenessDecision : Swift.RawRepresentable {}
+extension ScoringErrorInfo.ErrorCode : Swift.Equatable {}
+extension ScoringErrorInfo.ErrorCode : Swift.Hashable {}
+extension ScoringErrorInfo.ErrorCode : Swift.RawRepresentable {}
+extension BrightnessState : Swift.Equatable {}
+extension BrightnessState : Swift.Hashable {}
+extension Liveness : Swift.Equatable {}
+extension Liveness : Swift.Hashable {}
+extension Liveness : Swift.RawRepresentable {}
+extension ResponseType : Swift.Equatable {}
+extension ResponseType : Swift.Hashable {}
+extension ResponseType : Swift.RawRepresentable {}
+extension RestCommand : Swift.Equatable {}
+extension RestCommand : Swift.Hashable {}
+extension RestCommand : Swift.RawRepresentable {}
+extension FaceLivenessRestCommand : Swift.Equatable {}
+extension FaceLivenessRestCommand : Swift.Hashable {}
+extension FaceLivenessRestCommand : Swift.RawRepresentable {}
+extension VoiceLivenessRestCommand : Swift.Equatable {}
+extension VoiceLivenessRestCommand : Swift.Hashable {}
+extension VoiceLivenessRestCommand : Swift.RawRepresentable {}
+extension AutocaptureFeedback : Swift.Equatable {}
+extension AutocaptureFeedback : Swift.Hashable {}
+extension AutocaptureFeedback : Swift.RawRepresentable {}
+extension FaceLivenessError : Swift.Equatable {}
+extension FaceLivenessError : Swift.Hashable {}
+extension FaceLivenessError : Swift.RawRepresentable {}
+extension LivenessDecision : Swift.Equatable {}
+extension LivenessDecision : Swift.Hashable {}
+extension LivenessDecision : Swift.RawRepresentable {}
+extension PropertyTag : Swift.Equatable {}
+extension PropertyTag : Swift.Hashable {}
+extension PropertyTag : Swift.RawRepresentable {}
+extension StaticPropertyTag : Swift.Equatable {}
+extension StaticPropertyTag : Swift.Hashable {}
+extension StaticPropertyTag : Swift.RawRepresentable {}
+extension WorkflowState : Swift.Equatable {}
+extension WorkflowState : Swift.Hashable {}
+extension WorkflowState : Swift.RawRepresentable {}

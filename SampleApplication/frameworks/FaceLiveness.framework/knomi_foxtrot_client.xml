@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<profile version="6000000">		
+<face_characteristics>
+	<pose_angle_yaw                     units="degrees" min="-10"   pref="0"    max="10"    qWeight="2.0"/>
+</face_characteristics>
+<eye_characteristics>
+	<left_eye_closed_likelihood			units="%"		min="0"		pref="0"	max="100"    qWeight="10.0"/>
+	<right_eye_closed_likelihood		units="%"		min="0"		pref="0"	max="100"    qWeight="10.0"/>
+</eye_characteristics>
+<image_characteristics>
+    <number_channels                                    	min="1"     pref="3"    max="3"/>
+    <background_pad_type 									min="2"     pref="2" 	max="2" />
+</image_characteristics>
+<anomalies>
+    <dark_glasses_likelihood            units="%"       min="0"     pref="0"    max="50"/>
+</anomalies>
+<image_geometry>
+    <image_width                        	units="pixels"  min="40"/>
+    <image_height                   		units="pixels" />
+    <eye_separation 						units="pixels"  min="70"/>
+    <eye_axis_location_ratio 	 							min="0.55"   pref="0.6"  max="0.65"/>
+    <centerline_location_ratio 	 							min="0.5"   pref="0.5"  max="0.5"/>
+    <height_to_width_ratio 	 								min="1.245" pref="1.27" max="1.344"/>
+    <image_width_to_head_width_ratio                    	min="2.0" pref="2.1"  max="2.2"/>
+    <head_height_to_image_height_ratio                  	min="0.4"   pref="0.53"  max="0.6"/>
+    <eye_axis_angle 						units="degrees" min="-5"    pref="0"    max="5" />
+</image_geometry>                    
+<image_storage>
+    <jpeg_quality_level                                 	min="80"    pref="100"  max="100"/>
+    <file_size                          	units="bytes"   min="11000" pref="60000"   max="100000"/>
+    <j2k_compression_ratio                              	min="1"     pref="20"   max="20"/>	
+    <j2k_roi_foreground_compression_ratio               	min="1"     pref="10"   max="15"/>
+    <j2k_roi_background_compression_ratio               	min="1"     pref="50"   max="100"/>		
+    <image_format                                       	min="6"     pref="6"    max="6"/>
+</image_storage>
+</profile>

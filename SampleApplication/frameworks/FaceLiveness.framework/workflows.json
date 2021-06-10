@@ -1,0 +1,1023 @@
+{
+    "Alfa": {
+        "workflow_description": "Alfa: Server side analysis, passive liveness, high security, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_alfa_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 2,
+        "security_level": 78.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_alfa_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile"],
+        "use_back_camera": false,
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            },
+            {
+                "name": "E1",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+		],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },
+    "Bravo": {
+        "workflow_description": "Bravo: Server side analysis, active liveness, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": ["BLINK", "SMILE"],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_bravo_client.xml",
+        "client_zoom": 1.5,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 79.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 70,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 20,
+        "security_level": 58.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_bravo_server.xml",
+        "stream_duration": 1.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,
+        "video_algorithms": [],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },
+    "Charlie": {
+        "workflow_description": "Charlie: Server side analysis, passive liveness, higher security, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 78.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            },
+            {
+                "name": "E1",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },    
+    "Charlie6": {
+        "workflow_description": "Charlie: Server side analysis, passive liveness, higher security, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 78.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            },
+            {
+                "name": "E1",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },
+    "Charlie4": {
+        "workflow_description": "Charlie: Server side analysis, passive liveness, high security, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 73.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            },
+            {
+                "name": "E1",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },
+    "Charlie2": {
+        "workflow_description": "Charlie: Server side analysis, passive liveness, high usability, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 65.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            },
+            {
+                "name": "E1",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },
+    "Charlie6Fast": {
+        "workflow_description": "Charlie: Server side analysis, passive liveness, higher security, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 78.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },
+    "Charlie4Fast": {
+        "workflow_description": "Charlie: Server side analysis, passive liveness, high security, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 73.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },
+    "Charlie2Fast": {
+        "workflow_description": "Charlie: Server side analysis, passive liveness, high usability, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 65.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },
+    "Delta": {
+        "workflow_description": "Delta: Server side analysis, passive liveness, high usability, back camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_delta_client.xml",
+        "client_zoom": 1.5,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 78.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_delta_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": true,
+        "video_algorithms": [
+            {
+                "name": "B3",
+                "threshold": 50
+            },
+            {
+                "name": "E1",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            }
+        ]
+    },    
+    "Echo": {
+        "workflow_description": "Echo: Server side analysis, no passive or active liveness, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_echo_client.xml",
+        "client_zoom": 1.5,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,  
+        "detection_sensitivity": 79.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,     
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 70,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 5,
+        "security_level": 50.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_echo_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,
+        "video_algorithms": [],
+        "realtime_algorithms": []
+    },
+    "Golf": {
+        "workflow_description": "Golf: Echo + voice collection for server matching, front camera",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.5,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 79.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 70,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 5,
+        "security_level": 58.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,
+        "video_algorithms": [],
+        "realtime_algorithms": [],
+        "voice_enable": true,
+        "voice_phrase": "Hello Knomi, please verify my identity"
+    },
+    "Hotel": {
+        "workflow_description": "Hotel: Server side analysis for web client only",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 71.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+		"supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "E1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N3_W",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+        ]
+    },
+    "Hotel2": {
+        "workflow_description": "Hotel: Server side analysis for web client only",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 71.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+		"supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "E1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N3_W",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+        ]
+    },
+    "Hotel4": {
+        "workflow_description": "Hotel: Server side analysis for web client only",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 79.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+		"supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "E1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N3_W",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+        ]
+    },
+    "Hotel6": {
+        "workflow_description": "Hotel: Server side analysis for web client only",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 85.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+		"supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "E1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N3_W",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+        ]
+    },
+    "Hotel2Fast": {
+        "workflow_description": "Hotel: Server side analysis for web client only",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 71.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+		"supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "N1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N3_W",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+        ]
+    },
+    "Hotel4Fast": {
+        "workflow_description": "Hotel: Server side analysis for web client only",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 79.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+		"supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "N1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N3_W",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+        ]
+    },
+    "Hotel6Fast": {
+        "workflow_description": "Hotel: Server side analysis for web client only",
+        "algorithms_do_not_fuse": [],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_charlie_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,        
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 85.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_charlie_server.xml",
+        "stream_duration": 0.4,
+		"supported_models": ["mobile", "FaceModelStandardv2.dat"],
+        "use_back_camera": false,        
+        "video_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "N1_W",
+                "threshold": 50
+            },
+            {
+                "name": "N3_W",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+        ]
+    },
+    "India2": {
+        "workflow_description": "India: Client side analysis, passive liveness, high usability",
+        "algorithms_do_not_fuse": ["B2"],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_india_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 70.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_india_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile"],
+        "use_back_camera": false,
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ]
+    },
+    "India4": {
+        "workflow_description": "India: Client side analysis, passive liveness, high security",
+        "algorithms_do_not_fuse": ["B2"],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_india_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 77.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_india_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile"],
+        "use_back_camera": false,
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ]
+    },
+    "India6": {
+        "workflow_description": "India: Client side analysis, passive liveness, higher security",
+        "algorithms_do_not_fuse": ["B2"],
+        "client_face_events": [],
+        "client_preface_mode": "mobile",
+        "client_profile_name": "knomi_india_client.xml",
+        "client_zoom": 1.4,
+        "compliant_frames_before_collection": 3,
+        "compliance_time_before_collection": 0.0,
+        "detection_sensitivity": 100.0,
+        "enable_liveness_on_device": false,
+        "evaluation_time_before_collection": 1.5,
+        "face_detection_granularity": 0.2,
+        "face_detection_max_size": 1,
+        "face_detection_min_size": 0.3,
+        "face_detection_mode": "DOMINANT_FACE_BY_SIZE",
+        "face_detection_sensitivity": 0.7,
+        "jpeg_quality_level": 90,
+        "camera_zoom": 1.75,
+        "max_transmitted_frames": 3,
+        "security_level": 82.0,
+        "server_autocapture_minimum_frame_count": 1,
+        "server_preface_mode": "standard",
+        "server_profile_name": "knomi_india_server.xml",
+        "stream_duration": 0.4,
+        "supported_models": ["mobile"],
+        "use_back_camera": false,
+        "video_algorithms": [
+            {
+                "name": "B2",
+                "threshold": 50
+            }
+        ],
+        "realtime_algorithms": [
+            {
+                "name": "D2",
+                "threshold": 50
+            },
+            {
+                "name": "N1",
+                "threshold": 50
+            },
+            {
+                "name": "N3",
+                "threshold": 50
+            }
+        ]
+    }
+}
